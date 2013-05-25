@@ -1,2 +1,69 @@
 Use Propertise new = new Properties();
 to keep credential 
+
+
+##Win PowerShell script for Glerskalinn Auto.ps1
+
+Import-Module WASP
+aterman-glersk.exe
+Start-Sleep -Milliseconds 50
+Select-Window | ft –auto
+Select-Window -ProcessName aterman-glersk |select |Send-Keys "%"
+
+Start-Sleep -Milliseconds 50
+Select-Window -ProcessName aterman-glersk  |Send-Keys "l"
+Start-Sleep -Milliseconds 2000
+Select-Window -ProcessName aterman-glersk |Select-ChildWindow | Send-Keys "{ENTER}"
+Start-Sleep -Milliseconds 50
+Select-Window -ProcessName aterman-glersk |select |Send-Keys "%"
+Start-Sleep -Milliseconds 50
+Select-Window -ProcessName aterman-glersk |select |Send-Keys "s"
+Start-Sleep -Milliseconds 50
+Select-Window -ProcessName aterman-glersk |select |Send-Keys "{ENTER}"
+Start-Sleep -Milliseconds 800
+Select-Window -ProcessName aterman-glersk |Select-ChildWindow |Send-Keys "{ENTER}"
+Start-Sleep -Milliseconds 800
+Select-Window -ProcessName aterman-glersk |Select-ChildWindow |Send-Keys "{ENTER}"
+Start-Sleep -Milliseconds 50
+Select-Window -ProcessName aterman-glersk |select |Send-Keys "%"
+Start-Sleep -Milliseconds 50
+Select-Window -ProcessName aterman-glersk |select |Send-Keys "e"
+## Start a feeding process
+PPMFeedback.exe
+## Give it a time to  start 
+Start-Sleep -Milliseconds 3000
+Select-Window | ft –auto
+Start-Sleep -Milliseconds 500
+Select-Window -ProcessName PPMFeedback  |select |Send-Keys "+{TAB}"
+Start-Sleep -Milliseconds 500
+Select-Window -ProcessName PPMFeedback  |select |Send-Keys "nikki"
+Start-Sleep -Milliseconds 500
+Select-Window -ProcessName PPMFeedback  |select |Send-Keys "{TAB}"
+Start-Sleep -Milliseconds 500
+Select-Window -ProcessName PPMFeedback  |select |Send-Keys "bjartur"
+Start-Sleep -Milliseconds 500
+Select-Window -ProcessName PPMFeedback  |select |Send-Keys "{ENTER}"
+Start-Sleep -Milliseconds 5000
+## Here starts gui in app window
+
+Select-Window -ProcessName PPMFeedback  |select |Send-Keys "%"
+
+Start-Sleep -Milliseconds 500
+Select-Window -ProcessName PPMFeedback   |Send-Keys "r"
+Start-Sleep -Milliseconds 50
+Select-Window -ProcessName PPMFeedback   |Send-Keys "r"
+Start-Sleep -Milliseconds 50
+Select-Window -ProcessName PPMFeedback   |Send-Keys "s"
+Start-Sleep -Milliseconds 50
+Select-Window -ProcessName PPMFeedback   |Send-Keys "{F2}"
+Start-Sleep -Milliseconds 5000
+
+Select-Window -ProcessName PPMFeedback   |Select-ChildWindow | Send-Keys "{ENTER}"
+Start-Sleep -Milliseconds 500
+Select-Window -ProcessName PPMFeedback   |Send-Keys "%{F4}"
+
+
+
+
+
+
